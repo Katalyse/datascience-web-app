@@ -1,0 +1,9 @@
+docker build -f Dockerfile -t app:latest .
+
+docker run -p 8501:8501 app:latest
+
+docker login registrycontainerfordatasciencewebapp.azurecr.io
+
+docker tag app:latest registrycontainerfordatasciencewebapp.azurecr.io/dswebappkatalyseis:latest
+
+docker push registrycontainerfordatasciencewebapp.azurecr.io/dswebappkatalyseis:latest
